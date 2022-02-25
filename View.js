@@ -11,9 +11,9 @@ class View {
 
   }
 
-  getTopic() {
+  getTopic(menu) {
     return new Promise((resolve, reject) => {
-      rl.question(`Начнем игру \n 1 \n 2 \n 3 \n`, (topic) => {
+      rl.question(menu, (topic) => {
         // const m = []
         // m.push(`${name}`)
         // rl.close();
@@ -23,8 +23,15 @@ class View {
       });
     })
   }
+
+  showQuestion(question) {
+    return new Promise((resolve, rejects) => {
+      rl.question(`${question}\n`, (answer) => {
+        resolve(answer);
+      });
+    })
+  }
 } 
 
 
-// not indentical
 module.exports = View
