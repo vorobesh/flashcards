@@ -17,6 +17,13 @@ class Model {
     })
   }
 
+  makeBeautyMenu(arrOfTopics) {
+    let result = arrOfTopics
+    .map((item, i)=> (`${i+1}. ${item}`).slice(0, item.length - 1))
+    .join('\n')
+    return `Выберите тему вопросов:\n\n${result}\n`;
+  }
+
   makeQuestionsAnswers(arrQA, numOfTopic) {
     return new Promise((resolve, reject) => {
       fs.readFile(`${PATH}/${arrQA[numOfTopic - 1]}`, 'utf-8', (err, data) => {
