@@ -4,4 +4,6 @@ class View {
   }
 }
 
+
+// not indentical
 module.exports = View
